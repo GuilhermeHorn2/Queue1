@@ -1,0 +1,91 @@
+
+
+#include <iostream>
+#include <cmath>
+#include <cstring>
+#include <cstdlib>
+//
+//using std::string
+//
+using namespace std;
+
+class node{
+public:
+    int key;
+    int data;
+    node* prev;
+
+    node(){
+        key = 0;
+        data = 0;
+        prev = NULL;
+    }
+    node(int d,int k){
+        data = d;
+        key = k;
+    }
+};
+
+class stackLink{
+public:
+    node* top;
+    node* bottom;
+
+    stackLink(){
+        top = NULL;
+    }
+    stackLink(node* n){
+        top = n;
+    }
+
+    //methods
+    void push(node* n){
+        if(top = NULL){
+            top = n;
+        }
+        else{
+            n->prev = top;
+            top = n;
+        }
+    }
+    void pop(){
+        node* bottom = top;
+        node* temp = top;
+        while(bottom != NULL){
+            if(bottom->prev != NUll){
+                temp = bottom;
+            }
+            bottom = bottom->prev;
+        }
+        bottom = NULL;
+        temp->prev = NULL;
+        
+    }
+    void first(){
+        node* bottom = top;
+        while(bottom != NULL){
+            bottom = bottom->prev;
+        }
+        printf("%d",bottom);
+    }
+    //next element that will be retired;
+    int next(){
+        node* bottom = top;
+        while(bottom != NULL){
+            bottom = bottom->prev;
+        }
+        int bottom;
+    
+    int vazio(){
+        if(top = NULL){
+            return 1;
+        }
+        else{
+            return 0;
+        }
+    }
+    
+    
+};
+
+
